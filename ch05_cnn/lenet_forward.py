@@ -2,6 +2,7 @@ import tensorflow as tf
 
 IMAGE_SIZE = 28
 NUM_CHANNELS = 1
+INPUT_NODE = IMAGE_SIZE * IMAGE_SIZE * NUM_CHANNELS
 CONV1_SIZE = 5
 CONV1_KERNEL_NUM = 32
 CONV2_SIZE = 5
@@ -32,9 +33,10 @@ def max_pool_2x2(x):
 
 
 def forward(x, train=False, regularizer=None):
+    reshaped = tf.reshape(x, shape=[-1, IMAGE_SIZE, IMAGE_SIZE, NUM_CHANNELS])
     conv1_w = get_weight([CONV1_SIZE, CONV1_SIZE, NUM_CHANNELS, CONV1_KERNEL_NUM], regularizer)
     conv1_b = get_bias([CONV1_KERNEL_NUM])
-    conv1 = conv2d(x, conv1_w)
+    conv1 = conv2d(reshaped, conv1_w)
     relu1 = tf.nn.relu(tf.nn.bias_add(conv1, conv1_b))
     pool1 = max_pool_2x2(relu1)
 

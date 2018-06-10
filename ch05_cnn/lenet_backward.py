@@ -16,12 +16,7 @@ MODEL_NAME = "lenet_mnist_model"
 
 
 def backward(mnist):
-    x = tf.placeholder(dtype=tf.float32, shape=[
-        BATCH_SIZE,
-        lenet_forward.IMAGE_SIZE,
-        lenet_forward.IMAGE_SIZE,
-        lenet_forward.NUM_CHANNELS
-    ])
+    x = tf.placeholder(dtype=tf.float32, shape=[BATCH_SIZE, lenet_forward.INPUT_NODE])
     y_ = tf.placeholder(dtype=tf.float32, shape=[None, lenet_forward.OUTPUT_SIZE])
     y = lenet_forward.forward(x, train=True, regularizer=REGULARIZER)
 
@@ -58,14 +53,10 @@ def backward(mnist):
             saver.restore(sess, ckpt.model_checkpoint_path)
 
         for i in range(STEPS):
-            xs, ys = mnist.train.next_batch(BATCH_SIZE)
-            reshaped_xs = np.reshape(xs, newshape=[
-                BATCH_SIZE,
-                lenet_forward.IMAGE_SIZE,
-                lenet_forward.IMAGE_SIZE,
-                lenet_forward.NUM_CHANNELS
-            ])
-            _, loss_val, step_val = sess.run([train_op, loss_total, global_steps], feed_dict={x: reshaped_xs, y_: ys})
+            batch_xs, batch_ys = mnist.train.next_batch(BATCH_SIZE)
+            _, loss_val, step_val = sess.run(
+                [train_op, loss_total, global_steps], feed_dict={x: batch_xs, y_: batch_ys}
+            )
 
             if i % 100 == 0:
                 print("After %d training step(s), loss on the training batch is %g" % (step_val, loss_val))
