@@ -1,0 +1,75 @@
+nohup: ignoring input
+Extracting data/train-images-idx3-ubyte.gz
+Extracting data/train-labels-idx1-ubyte.gz
+Extracting data/t10k-images-idx3-ubyte.gz
+Extracting data/t10k-labels-idx1-ubyte.gz
+MNIST READY
+CNN READY
+conv1/Relu  [None, 28, 28, 64]
+pool1/MaxPool  [None, 14, 14, 64]
+conv2/Relu  [None, 14, 14, 128]
+pool2/MaxPool  [None, 7, 7, 128]
+conv3/Relu  [None, 7, 7, 256]
+conv4/Relu  [None, 7, 7, 256]
+conv5/Relu  [None, 7, 7, 128]
+pool3/MaxPool  [None, 4, 4, 128]
+fc1/dropout/mul  [None, 1024]
+fc2/dropout/mul  [None, 1024]
+out/Add  [None, 10]
+FUNCTIONS READY
+2018-06-08 11:06:01.755517: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-06-08 11:06:02.123631: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.62
+pciBusID: 0000:03:00.0
+totalMemory: 10.91GiB freeMemory: 8.97GiB
+2018-06-08 11:06:02.506617: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 1 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.62
+pciBusID: 0000:81:00.0
+totalMemory: 10.91GiB freeMemory: 9.41GiB
+2018-06-08 11:06:02.506739: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Device peer to peer matrix
+2018-06-08 11:06:02.506784: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] DMA: 0 1 
+2018-06-08 11:06:02.506796: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 0:   Y N 
+2018-06-08 11:06:02.506804: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 1:   N Y 
+2018-06-08 11:06:02.506819: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:03:00.0, compute capability: 6.1)
+2018-06-08 11:06:02.506829: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:1) -> (device: 1, name: GeForce GTX 1080 Ti, pci bus id: 0000:81:00.0, compute capability: 6.1)
+Epoch: 001/020 cost: 0.702037142 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.974300
+2018-06-08 11:06:15.242972: epoch 1, duration = 12.092
+Epoch: 002/020 cost: 0.038500260 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.987300
+2018-06-08 11:06:25.531630: epoch 2, duration = 10.288
+Epoch: 003/020 cost: 0.026577340 TRAIN ACCURACY: 0.984375 TEST ACCURACY: 0.986400
+2018-06-08 11:06:35.765296: epoch 3, duration = 10.233
+Epoch: 004/020 cost: 0.018927847 TRAIN ACCURACY: 0.968750 TEST ACCURACY: 0.984200
+2018-06-08 11:06:45.955076: epoch 4, duration = 10.190
+Epoch: 005/020 cost: 0.016338477 TRAIN ACCURACY: 0.968750 TEST ACCURACY: 0.986200
+2018-06-08 11:06:56.176671: epoch 5, duration = 10.222
+Epoch: 006/020 cost: 0.013590765 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.990500
+2018-06-08 11:07:06.290741: epoch 6, duration = 10.114
+Epoch: 007/020 cost: 0.012635868 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.982200
+2018-06-08 11:07:16.576780: epoch 7, duration = 10.286
+Epoch: 008/020 cost: 0.011663881 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.983600
+2018-06-08 11:07:26.900777: epoch 8, duration = 10.324
+Epoch: 009/020 cost: 0.010171870 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.987800
+2018-06-08 11:07:37.202123: epoch 9, duration = 10.301
+Epoch: 010/020 cost: 0.008844999 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.990700
+2018-06-08 11:07:47.546972: epoch 10, duration = 10.345
+Epoch: 011/020 cost: 0.008417411 TRAIN ACCURACY: 0.984375 TEST ACCURACY: 0.990600
+2018-06-08 11:07:57.786697: epoch 11, duration = 10.240
+Epoch: 012/020 cost: 0.007490205 TRAIN ACCURACY: 0.984375 TEST ACCURACY: 0.990800
+2018-06-08 11:08:08.038507: epoch 12, duration = 10.252
+Epoch: 013/020 cost: 0.006513667 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.989400
+2018-06-08 11:08:18.288247: epoch 13, duration = 10.250
+Epoch: 014/020 cost: 0.005654923 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.992000
+2018-06-08 11:08:28.592865: epoch 14, duration = 10.305
+Epoch: 015/020 cost: 0.004515872 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.987000
+2018-06-08 11:08:38.893319: epoch 15, duration = 10.300
+Epoch: 016/020 cost: 0.004536701 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.989800
+2018-06-08 11:08:49.088446: epoch 16, duration = 10.195
+Epoch: 017/020 cost: 0.003463894 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.988300
+2018-06-08 11:08:59.330572: epoch 17, duration = 10.242
+Epoch: 018/020 cost: 0.004021844 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.991100
+2018-06-08 11:09:09.593196: epoch 18, duration = 10.263
+Epoch: 019/020 cost: 0.002906389 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.990000
+2018-06-08 11:09:19.894572: epoch 19, duration = 10.301
+Epoch: 020/020 cost: 0.003811577 TRAIN ACCURACY: 1.000000 TEST ACCURACY: 0.991500
+2018-06-08 11:09:30.205598: epoch 20, duration = 10.311
+DONE
