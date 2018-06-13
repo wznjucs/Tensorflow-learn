@@ -22,7 +22,7 @@ LeNet-5卷积神经网络(有改动，输入从 32x32 改为 28x28
 AlexNet with mnist
 
 ## ch07 signs
-cnn with signs
+ConvNet with signs
 
 ## ch08 ResNet
 ResNet 50 with keras
