@@ -17,3 +17,12 @@ MNIST数据集与全连接网络
 
 ## ch05 LeNet-5网络
 LeNet-5卷积神经网络(有改动，输入从 32x32 改为 28x28
+
+## ch06 AlexNet网络
+AlexNet with mnist
+
+## ch07 signs
+cnn with signs
+
+## ch08 ResNet
+ResNet 50 with keras
